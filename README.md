@@ -125,8 +125,6 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 There are two types of G42 Cloud services, `regional` services and `global` services.
 
-Global services contain IAM.
-
 For `Regional` services' authentication, projectId is required. 
 
 For `global` services' authentication, domainId is required.

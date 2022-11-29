@@ -1,6 +1,6 @@
 {
   "name": "@g42cloud/g42cloud-sdk-service",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "description": "g42cloud SDK",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
