@@ -2,7 +2,7 @@ import { AddonInstanceStatus } from './AddonInstanceStatus';
 import { InstanceSpec } from './InstanceSpec';
 import { Metadata } from './Metadata';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateAddonInstanceResponse extends SdkResponse {
     public kind?: string;

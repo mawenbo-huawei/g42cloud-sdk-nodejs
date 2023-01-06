@@ -1,6 +1,6 @@
 import { Listener } from './Listener';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class UpdateListenerResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

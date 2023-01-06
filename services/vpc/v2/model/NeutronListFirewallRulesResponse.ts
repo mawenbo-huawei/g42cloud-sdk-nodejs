@@ -1,7 +1,7 @@
 import { NeutronFirewallRule } from './NeutronFirewallRule';
 import { NeutronPageLink } from './NeutronPageLink';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NeutronListFirewallRulesResponse extends SdkResponse {
     private 'firewall_rules'?: Array<NeutronFirewallRule> | undefined;

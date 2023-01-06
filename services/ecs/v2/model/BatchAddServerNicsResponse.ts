@@ -1,5 +1,5 @@
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class BatchAddServerNicsResponse extends SdkResponse {
     private 'job_id'?: string | undefined;

@@ -1,7 +1,7 @@
 import { NeutronPageLink } from './NeutronPageLink';
 import { NeutronSecurityGroupRule } from './NeutronSecurityGroupRule';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NeutronListSecurityGroupRulesResponse extends SdkResponse {
     private 'security_group_rules'?: Array<NeutronSecurityGroupRule> | undefined;

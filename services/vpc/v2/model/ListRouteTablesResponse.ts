@@ -1,6 +1,6 @@
 import { RouteTableListResp } from './RouteTableListResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListRouteTablesResponse extends SdkResponse {
     public routetables?: Array<RouteTableListResp>;

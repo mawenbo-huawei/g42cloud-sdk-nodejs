@@ -1,4 +1,4 @@
-import { Region } from "@huaweicloud/huaweicloud-sdk-core/region/region";
+import { Region } from "@g42cloud/g42cloud-sdk-core/region/region";
 
 export class ElbRegion {
     public static AE_AD_1 = new Region("ae-ad-1", "https://elb.ae-ad-1.g42cloud.com");

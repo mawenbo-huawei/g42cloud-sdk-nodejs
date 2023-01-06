@@ -1,6 +1,6 @@
 import { NeutronSecurityGroup } from './NeutronSecurityGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NeutronCreateSecurityGroupResponse extends SdkResponse {
     private 'security_group'?: NeutronSecurityGroup | undefined;

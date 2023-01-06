@@ -1,6 +1,6 @@
 import { RollbackInfo } from './RollbackInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class RollbackSnapshotResponse extends SdkResponse {
     public rollback?: RollbackInfo;

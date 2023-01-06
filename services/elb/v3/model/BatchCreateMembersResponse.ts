@@ -1,6 +1,6 @@
 import { BatchMember } from './BatchMember';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class BatchCreateMembersResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

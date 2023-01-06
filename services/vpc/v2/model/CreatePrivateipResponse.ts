@@ -1,6 +1,6 @@
 import { Privateip } from './Privateip';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreatePrivateipResponse extends SdkResponse {
     public privateips?: Array<Privateip>;

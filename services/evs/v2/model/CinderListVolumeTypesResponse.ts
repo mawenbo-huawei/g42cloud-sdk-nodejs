@@ -1,6 +1,6 @@
 import { VolumeType } from './VolumeType';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CinderListVolumeTypesResponse extends SdkResponse {
     private 'volume_types'?: Array<VolumeType> | undefined;

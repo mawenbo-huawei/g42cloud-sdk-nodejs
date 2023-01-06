@@ -1,6 +1,6 @@
 import { ServerTag } from './ServerTag';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowServerTagsResponse extends SdkResponse {
     public tags?: Array<ServerTag>;

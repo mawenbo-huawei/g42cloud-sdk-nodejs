@@ -1,6 +1,6 @@
 import { NeutronFirewallPolicy } from './NeutronFirewallPolicy';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NeutronCreateFirewallPolicyResponse extends SdkResponse {
     private 'firewall_policy'?: NeutronFirewallPolicy | undefined;

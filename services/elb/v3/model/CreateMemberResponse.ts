@@ -1,6 +1,6 @@
 import { Member } from './Member';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateMemberResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

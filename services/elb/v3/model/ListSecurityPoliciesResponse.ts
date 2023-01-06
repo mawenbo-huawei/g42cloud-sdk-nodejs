@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { SecurityPolicy } from './SecurityPolicy';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListSecurityPoliciesResponse extends SdkResponse {
     private 'security_policies'?: Array<SecurityPolicy> | undefined;

@@ -1,6 +1,6 @@
 import { EngineSimpleInfo } from './EngineSimpleInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListEnginesResponse extends SdkResponse {
     public total?: number;

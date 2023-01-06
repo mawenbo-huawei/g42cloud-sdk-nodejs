@@ -1,6 +1,6 @@
 import { SecurityGroupRule } from './SecurityGroupRule';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateSecurityGroupRuleResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

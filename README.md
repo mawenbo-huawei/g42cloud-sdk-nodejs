@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://www.g42cloud.com/"><img style="background-color:black;" width="450px" height="102px" src="https://auth.g42cloud.com//authui/20220614193554/public/custom/images/logo.svg"></a>
+<a href="https://www.g42cloud.com/"><img src="https://upload.wikimedia.org/wikipedia/en/4/43/Group_42_Logo.jpg"></a>
 </p>
 
 <h1 align="center">G42 Cloud Node.js Software Development Kit (Node.js SDK)</h1>
@@ -23,11 +23,11 @@ This document introduces how to obtain and use G42 Cloud Node.js SDK.
 
 The recommended way to install SDK is with npm.
 
-You must depended on `@huaweicloud/huaweicloud-sdk-core` library no matter which product/service development kit you
+You must depended on `@g42cloud/g42cloud-sdk-core` library no matter which product/service development kit you
 need to use. Take using VPC SDK for example, you need to install `@g42cloud/g42cloud-sdk-vpc` library:
 
 ``` bash
-npm install @huaweicloud/huaweicloud-sdk-core
+npm install @g42cloud/g42cloud-sdk-core
 npm install @g42cloud/g42cloud-sdk-vpc
 ```
 
@@ -39,8 +39,8 @@ npm install @g42cloud/g42cloud-sdk-vpc
 
 ``` javascript
 // index.js
-const core = require('@huaweicloud/huaweicloud-sdk-core');
-const vpc = require('@g42cloud/huaweicloud-sdk-vpc');
+const core = require('@g42cloud/g42cloud-sdk-core');
+const vpc = require('@g42cloud/g42cloud-sdk-vpc');
 
 const ak = '<YOUR AK>';
 const sk = '<YOUR SK>';

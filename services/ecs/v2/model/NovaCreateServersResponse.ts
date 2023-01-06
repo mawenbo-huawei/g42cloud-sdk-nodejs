@@ -1,6 +1,6 @@
 import { NovaCreateServersResult } from './NovaCreateServersResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NovaCreateServersResponse extends SdkResponse {
     public server?: NovaCreateServersResult;

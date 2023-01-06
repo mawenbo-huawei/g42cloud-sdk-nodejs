@@ -1,7 +1,7 @@
 import { PageInfo } from './PageInfo';
 import { SubNetworkInterface } from './SubNetworkInterface';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListSubNetworkInterfacesResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

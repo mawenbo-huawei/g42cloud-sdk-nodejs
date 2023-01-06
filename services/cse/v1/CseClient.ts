@@ -1,6 +1,7 @@
-import { HcClient } from "@huaweicloud/huaweicloud-sdk-core/HcClient";
-import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { HcClient } from "@g42cloud/g42cloud-sdk-core/HcClient";
+import { ClientBuilder } from "@g42cloud/g42cloud-sdk-core/ClientBuilder";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
+import FormData from 'form-data';
 
 import { ClusterNode } from './model/ClusterNode';
 import { CreateEngineRequest } from './model/CreateEngineRequest';
@@ -40,7 +41,7 @@ import { UploadKieResponse } from './model/UploadKieResponse';
 
 export class CseClient {
     public static newBuilder(): ClientBuilder<CseClient> {
-        return new ClientBuilder<CseClient>(newClient);
+            return new ClientBuilder<CseClient>(newClient);
     }
 
     private hcClient: HcClient;
@@ -66,8 +67,10 @@ export class CseClient {
      */
     public createEngine(createEngineRequest?: CreateEngineRequest): Promise<CreateEngineResponse> {
         const options = ParamCreater().createEngine(createEngineRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -84,8 +87,10 @@ export class CseClient {
      */
     public deleteEngine(deleteEngineRequest?: DeleteEngineRequest): Promise<DeleteEngineResponse> {
         const options = ParamCreater().deleteEngine(deleteEngineRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -105,8 +110,10 @@ export class CseClient {
      */
     public downloadKie(downloadKieRequest?: DownloadKieRequest): Promise<DownloadKieResponse> {
         const options = ParamCreater().downloadKie(downloadKieRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -123,8 +130,10 @@ export class CseClient {
      */
     public listEngines(listEnginesRequest?: ListEnginesRequest): Promise<ListEnginesResponse> {
         const options = ParamCreater().listEngines(listEnginesRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -140,8 +149,10 @@ export class CseClient {
      */
     public listFlavors(listFlavorsRequest?: ListFlavorsRequest): Promise<ListFlavorsResponse> {
         const options = ParamCreater().listFlavors(listFlavorsRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -158,8 +169,10 @@ export class CseClient {
      */
     public showEngine(showEngineRequest?: ShowEngineRequest): Promise<ShowEngineResponse> {
         const options = ParamCreater().showEngine(showEngineRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -177,8 +190,10 @@ export class CseClient {
      */
     public showEngineJob(showEngineJobRequest?: ShowEngineJobRequest): Promise<ShowEngineJobResponse> {
         const options = ParamCreater().showEngineJob(showEngineJobRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -198,8 +213,10 @@ export class CseClient {
      */
     public uploadKie(uploadKieRequest?: UploadKieRequest): Promise<UploadKieResponse> {
         const options = ParamCreater().uploadKie(uploadKieRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 }
@@ -225,6 +242,7 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let xEnterpriseProjectID;
 
             if (createEngineRequest !== null && createEngineRequest !== undefined) {
@@ -268,7 +286,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let engineId;
+            
             let xEnterpriseProjectID;
 
             if (deleteEngineRequest !== null && deleteEngineRequest !== undefined) {
@@ -312,9 +332,13 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
             var body: any;
+            
             let xEngineId;
+            
             let xEnterpriseProjectID;
+            
             let label;
+            
             let match;
 
             if (downloadKieRequest !== null && downloadKieRequest !== undefined) {
@@ -374,7 +398,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let offset;
+            
             let limit;
 
             if (listEnginesRequest !== null && listEnginesRequest !== undefined) {
@@ -417,6 +443,7 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let specType;
 
             if (listFlavorsRequest !== null && listFlavorsRequest !== undefined) {
@@ -454,7 +481,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let engineId;
+            
             let xEnterpriseProjectID;
 
             if (showEngineRequest !== null && showEngineRequest !== undefined) {
@@ -497,8 +526,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let engineId;
+            
             let jobId;
+            
             let xEnterpriseProjectID;
 
             if (showEngineJobRequest !== null && showEngineJobRequest !== undefined) {
@@ -547,23 +579,28 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
             const localVarFormParams = new FormData();
+            
             let xEngineId;
+            
             let override;
             var uploadFile;
+            
+            
             let xEnterpriseProjectID;
+            
             let label;
 
             if (uploadKieRequest !== null && uploadKieRequest !== undefined) {
                 if (uploadKieRequest instanceof UploadKieRequest) {
                     xEngineId = uploadKieRequest.xEngineId;
                     override = uploadKieRequest.override;
-                    uploadFile = uploadKieRequest.body;
+                    uploadFile = uploadKieRequest.body?.uploadFile;
                     xEnterpriseProjectID = uploadKieRequest.xEnterpriseProjectID;
                     label = uploadKieRequest.label;
                 } else {
                     xEngineId = uploadKieRequest['x-engine-id'];
                     override = uploadKieRequest['override'];
-                    uploadFile = uploadKieRequest['body'];
+                    uploadFile = uploadKieRequest['body']['uploadFile'];
                     xEnterpriseProjectID = uploadKieRequest['X-Enterprise-Project-ID'];
                     label = uploadKieRequest['label'];
                 }
@@ -591,6 +628,8 @@ export const ParamCreater = function () {
             if (xEngineId !== undefined && xEngineId !== null) {
                 localVarHeaderParameter['x-engine-id'] = String(xEngineId);
             }
+            localVarHeaderParameter['Content-Type'] = 'application/x-www-form-urlencoded';
+            localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
             options.data = localVarFormParams;
             options.queryParams = localVarQueryParameter;
             options.headers = localVarHeaderParameter;

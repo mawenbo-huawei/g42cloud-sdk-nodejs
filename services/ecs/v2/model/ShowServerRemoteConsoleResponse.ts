@@ -1,6 +1,6 @@
 import { ServerRemoteConsole } from './ServerRemoteConsole';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowServerRemoteConsoleResponse extends SdkResponse {
     private 'remote_console'?: ServerRemoteConsole | undefined;

@@ -1,7 +1,7 @@
 import { CreateKieReq } from './CreateKieReq';
 import { DownloadKieResponseBodyMetadata } from './DownloadKieResponseBodyMetadata';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class DownloadKieResponse extends SdkResponse {
     public metadata?: DownloadKieResponseBodyMetadata;

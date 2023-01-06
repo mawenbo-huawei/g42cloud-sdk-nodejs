@@ -1,7 +1,7 @@
 import { NovaServer } from './NovaServer';
 import { PageLink } from './PageLink';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NovaListServersDetailsResponse extends SdkResponse {
     public servers?: Array<NovaServer>;

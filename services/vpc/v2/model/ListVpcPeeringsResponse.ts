@@ -1,7 +1,7 @@
 import { NeutronPageLink } from './NeutronPageLink';
 import { VpcPeering } from './VpcPeering';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListVpcPeeringsResponse extends SdkResponse {
     public peerings?: Array<VpcPeering>;

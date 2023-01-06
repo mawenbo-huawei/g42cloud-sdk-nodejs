@@ -1,6 +1,6 @@
 import { ListResizeFlavorsResult } from './ListResizeFlavorsResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListResizeFlavorsResponse extends SdkResponse {
     public flavors?: Array<ListResizeFlavorsResult>;

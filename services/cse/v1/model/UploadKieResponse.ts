@@ -1,7 +1,7 @@
 import { DocFailedOfUpload } from './DocFailedOfUpload';
 import { GetKieConfigs } from './GetKieConfigs';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class UploadKieResponse extends SdkResponse {
     public success?: Array<GetKieConfigs>;

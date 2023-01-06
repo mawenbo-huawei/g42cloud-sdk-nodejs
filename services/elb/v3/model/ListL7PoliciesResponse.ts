@@ -1,7 +1,7 @@
 import { L7Policy } from './L7Policy';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListL7PoliciesResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

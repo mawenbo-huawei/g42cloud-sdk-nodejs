@@ -1,6 +1,6 @@
 import { Resource } from './Resource';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListVolumesByTagsResponse extends SdkResponse {
     private 'total_count'?: number | undefined;

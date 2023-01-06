@@ -1,6 +1,6 @@
 import { NetworkIpAvailability } from './NetworkIpAvailability';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
     private 'network_ip_availability'?: NetworkIpAvailability | undefined;

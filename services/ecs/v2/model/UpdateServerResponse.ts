@@ -1,6 +1,6 @@
 import { UpdateServerResult } from './UpdateServerResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class UpdateServerResponse extends SdkResponse {
     public server?: UpdateServerResult;

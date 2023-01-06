@@ -1,6 +1,6 @@
 import { Versions } from './Versions';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListVersionsResponse extends SdkResponse {
     public versions?: Array<Versions>;

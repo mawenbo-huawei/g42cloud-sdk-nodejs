@@ -1,7 +1,7 @@
 import { NeutronPageLink } from './NeutronPageLink';
 import { VpcRoute } from './VpcRoute';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListVpcRoutesResponse extends SdkResponse {
     public routes?: Array<VpcRoute>;

@@ -1,6 +1,6 @@
 import { IpGroup } from './IpGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class BatchDeleteIpListResponse extends SdkResponse {
     public ipgroup?: IpGroup;

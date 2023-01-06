@@ -2,7 +2,7 @@ import { Attachment } from './Attachment';
 import { Link } from './Link';
 import { VolumeMetadata } from './VolumeMetadata';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class UpdateVolumeResponse extends SdkResponse {
     public attachments?: Array<Attachment>;

@@ -1,7 +1,7 @@
 import { LoadBalancer } from './LoadBalancer';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListLoadBalancersResponse extends SdkResponse {
     public loadbalancers?: Array<LoadBalancer>;

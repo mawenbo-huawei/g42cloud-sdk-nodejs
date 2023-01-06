@@ -1,6 +1,6 @@
 import { ShowServerGroupResult } from './ShowServerGroupResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowServerGroupResponse extends SdkResponse {
     private 'server_group'?: ShowServerGroupResult | undefined;

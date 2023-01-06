@@ -1,6 +1,6 @@
 import { PreoccupyIp } from './PreoccupyIp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CountPreoccupyIpNumResponse extends SdkResponse {
     private 'preoccupy_ip'?: PreoccupyIp | undefined;

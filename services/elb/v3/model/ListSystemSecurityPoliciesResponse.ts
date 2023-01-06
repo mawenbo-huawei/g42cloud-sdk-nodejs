@@ -1,6 +1,6 @@
 import { SystemSecurityPolicy } from './SystemSecurityPolicy';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListSystemSecurityPoliciesResponse extends SdkResponse {
     private 'system_security_policies'?: Array<SystemSecurityPolicy> | undefined;

@@ -1,7 +1,7 @@
 import { AddressGroup } from './AddressGroup';
 import { PageInfo } from './PageInfo';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListAddressGroupResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

@@ -2,7 +2,7 @@ import { ClusterMetadata } from './ClusterMetadata';
 import { ClusterSpec } from './ClusterSpec';
 import { ClusterStatus } from './ClusterStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateClusterResponse extends SdkResponse {
     public kind?: string;

@@ -1,6 +1,6 @@
 import { Subnet } from './Subnet';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowSubnetResponse extends SdkResponse {
     public subnet?: Subnet;

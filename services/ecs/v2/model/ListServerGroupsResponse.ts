@@ -1,7 +1,7 @@
 import { ListServerGroupsPageInfoResult } from './ListServerGroupsPageInfoResult';
 import { ListServerGroupsResult } from './ListServerGroupsResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListServerGroupsResponse extends SdkResponse {
     private 'server_groups'?: Array<ListServerGroupsResult> | undefined;

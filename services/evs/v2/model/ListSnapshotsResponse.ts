@@ -1,7 +1,7 @@
 import { Link } from './Link';
 import { SnapshotList } from './SnapshotList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListSnapshotsResponse extends SdkResponse {
     public count?: number;

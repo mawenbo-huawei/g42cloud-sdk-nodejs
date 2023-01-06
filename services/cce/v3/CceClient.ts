@@ -1,6 +1,6 @@
-import { HcClient } from "@huaweicloud/huaweicloud-sdk-core/HcClient";
-import { ClientBuilder } from "@huaweicloud/huaweicloud-sdk-core/ClientBuilder";
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { HcClient } from "@g42cloud/g42cloud-sdk-core/HcClient";
+import { ClientBuilder } from "@g42cloud/g42cloud-sdk-core/ClientBuilder";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 import { AddonInstance } from './model/AddonInstance';
 import { AddonInstanceStatus } from './model/AddonInstanceStatus';
@@ -154,7 +154,7 @@ import { VolumeMetadata } from './model/VolumeMetadata';
 
 export class CceClient {
     public static newBuilder(): ClientBuilder<CceClient> {
-        return new ClientBuilder<CceClient>(newClient);
+            return new ClientBuilder<CceClient>(newClient);
     }
 
     private hcClient: HcClient;
@@ -180,8 +180,10 @@ export class CceClient {
      */
     public awakeCluster(awakeClusterRequest?: AwakeClusterRequest): Promise<void> {
         const options = ParamCreater().awakeCluster(awakeClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -198,8 +200,10 @@ export class CceClient {
      */
     public createAddonInstance(createAddonInstanceRequest?: CreateAddonInstanceRequest): Promise<CreateAddonInstanceResponse> {
         const options = ParamCreater().createAddonInstance(createAddonInstanceRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -220,8 +224,10 @@ export class CceClient {
      */
     public createCloudPersistentVolumeClaims(createCloudPersistentVolumeClaimsRequest?: CreateCloudPersistentVolumeClaimsRequest): Promise<CreateCloudPersistentVolumeClaimsResponse> {
         const options = ParamCreater().createCloudPersistentVolumeClaims(createCloudPersistentVolumeClaimsRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -241,8 +247,10 @@ export class CceClient {
      */
     public createCluster(createClusterRequest?: CreateClusterRequest): Promise<CreateClusterResponse> {
         const options = ParamCreater().createCluster(createClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -260,8 +268,10 @@ export class CceClient {
      */
     public createKubernetesClusterCert(createKubernetesClusterCertRequest?: CreateKubernetesClusterCertRequest): Promise<CreateKubernetesClusterCertResponse> {
         const options = ParamCreater().createKubernetesClusterCert(createKubernetesClusterCertRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = ['Port-ID'];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -282,8 +292,10 @@ export class CceClient {
      */
     public createNode(createNodeRequest?: CreateNodeRequest): Promise<CreateNodeResponse> {
         const options = ParamCreater().createNode(createNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -304,8 +316,10 @@ export class CceClient {
      */
     public createNodePool(createNodePoolRequest?: CreateNodePoolRequest): Promise<CreateNodePoolResponse> {
         const options = ParamCreater().createNodePool(createNodePoolRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -323,8 +337,10 @@ export class CceClient {
      */
     public deleteAddonInstance(deleteAddonInstanceRequest?: DeleteAddonInstanceRequest): Promise<string> {
         const options = ParamCreater().deleteAddonInstance(deleteAddonInstanceRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -347,8 +363,10 @@ export class CceClient {
      */
     public deleteCloudPersistentVolumeClaims(deleteCloudPersistentVolumeClaimsRequest?: DeleteCloudPersistentVolumeClaimsRequest): Promise<DeleteCloudPersistentVolumeClaimsResponse> {
         const options = ParamCreater().deleteCloudPersistentVolumeClaims(deleteCloudPersistentVolumeClaimsRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -373,8 +391,10 @@ export class CceClient {
      */
     public deleteCluster(deleteClusterRequest?: DeleteClusterRequest): Promise<DeleteClusterResponse> {
         const options = ParamCreater().deleteCluster(deleteClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -394,8 +414,10 @@ export class CceClient {
      */
     public deleteNode(deleteNodeRequest?: DeleteNodeRequest): Promise<DeleteNodeResponse> {
         const options = ParamCreater().deleteNode(deleteNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -414,8 +436,10 @@ export class CceClient {
      */
     public deleteNodePool(deleteNodePoolRequest?: DeleteNodePoolRequest): Promise<DeleteNodePoolResponse> {
         const options = ParamCreater().deleteNodePool(deleteNodePoolRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -432,8 +456,10 @@ export class CceClient {
      */
     public hibernateCluster(hibernateClusterRequest?: HibernateClusterRequest): Promise<void> {
         const options = ParamCreater().hibernateCluster(hibernateClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -450,8 +476,10 @@ export class CceClient {
      */
     public listAddonInstances(listAddonInstancesRequest?: ListAddonInstancesRequest): Promise<ListAddonInstancesResponse> {
         const options = ParamCreater().listAddonInstances(listAddonInstancesRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -468,8 +496,10 @@ export class CceClient {
      */
     public listAddonTemplates(listAddonTemplatesRequest?: ListAddonTemplatesRequest): Promise<ListAddonTemplatesResponse> {
         const options = ParamCreater().listAddonTemplates(listAddonTemplatesRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -489,8 +519,10 @@ export class CceClient {
      */
     public listClusters(listClustersRequest?: ListClustersRequest): Promise<ListClustersResponse> {
         const options = ParamCreater().listClusters(listClustersRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -510,8 +542,10 @@ export class CceClient {
      */
     public listNodePools(listNodePoolsRequest?: ListNodePoolsRequest): Promise<ListNodePoolsResponse> {
         const options = ParamCreater().listNodePools(listNodePoolsRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -529,8 +563,10 @@ export class CceClient {
      */
     public listNodes(listNodesRequest?: ListNodesRequest): Promise<ListNodesResponse> {
         const options = ParamCreater().listNodes(listNodesRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -550,8 +586,10 @@ export class CceClient {
      */
     public migrateNode(migrateNodeRequest?: MigrateNodeRequest): Promise<MigrateNodeResponse> {
         const options = ParamCreater().migrateNode(migrateNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -570,8 +608,10 @@ export class CceClient {
      */
     public removeNode(removeNodeRequest?: RemoveNodeRequest): Promise<RemoveNodeResponse> {
         const options = ParamCreater().removeNode(removeNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -589,8 +629,10 @@ export class CceClient {
      */
     public showAddonInstance(showAddonInstanceRequest?: ShowAddonInstanceRequest): Promise<ShowAddonInstanceResponse> {
         const options = ParamCreater().showAddonInstance(showAddonInstanceRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -609,8 +651,10 @@ export class CceClient {
      */
     public showCluster(showClusterRequest?: ShowClusterRequest): Promise<ShowClusterResponse> {
         const options = ParamCreater().showCluster(showClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -631,8 +675,10 @@ export class CceClient {
      */
     public showJob(showJobRequest?: ShowJobRequest): Promise<ShowJobResponse> {
         const options = ParamCreater().showJob(showJobRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -651,8 +697,10 @@ export class CceClient {
      */
     public showNode(showNodeRequest?: ShowNodeRequest): Promise<ShowNodeResponse> {
         const options = ParamCreater().showNode(showNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -671,8 +719,10 @@ export class CceClient {
      */
     public showNodePool(showNodePoolRequest?: ShowNodePoolRequest): Promise<ShowNodePoolResponse> {
         const options = ParamCreater().showNodePool(showNodePoolRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -690,8 +740,10 @@ export class CceClient {
      */
     public updateAddonInstance(updateAddonInstanceRequest?: UpdateAddonInstanceRequest): Promise<UpdateAddonInstanceResponse> {
         const options = ParamCreater().updateAddonInstance(updateAddonInstanceRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -710,8 +762,10 @@ export class CceClient {
      */
     public updateCluster(updateClusterRequest?: UpdateClusterRequest): Promise<UpdateClusterResponse> {
         const options = ParamCreater().updateCluster(updateClusterRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -732,8 +786,10 @@ export class CceClient {
      */
     public updateNode(updateNodeRequest?: UpdateNodeRequest): Promise<UpdateNodeResponse> {
         const options = ParamCreater().updateNode(updateNodeRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 
@@ -755,8 +811,10 @@ export class CceClient {
      */
     public updateNodePool(updateNodePoolRequest?: UpdateNodePoolRequest): Promise<UpdateNodePoolResponse> {
         const options = ParamCreater().updateNodePool(updateNodePoolRequest);
+
+         // @ts-ignore
         options['responseHeaders'] = [''];
-        // @ts-ignore
+
         return this.hcClient.sendRequest(options);
     }
 }
@@ -781,7 +839,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let contentType;
 
             if (awakeClusterRequest !== null && awakeClusterRequest !== undefined) {
@@ -825,6 +885,7 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let contentType;
 
             if (createAddonInstanceRequest !== null && createAddonInstanceRequest !== undefined) {
@@ -871,8 +932,11 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let namespace;
+            
             let contentType;
+            
             let xClusterID;
 
             if (createCloudPersistentVolumeClaimsRequest !== null && createCloudPersistentVolumeClaimsRequest !== undefined) {
@@ -931,6 +995,7 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let contentType;
 
             if (createClusterRequest !== null && createClusterRequest !== undefined) {
@@ -975,7 +1040,9 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let contentType;
 
             if (createKubernetesClusterCertRequest !== null && createKubernetesClusterCertRequest !== undefined) {
@@ -1028,8 +1095,11 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
             var body: any;
+            
             let clusterId;
+            
             let contentType;
+            
             let nodepoolScaleUp;
 
             if (createNodeRequest !== null && createNodeRequest !== undefined) {
@@ -1089,7 +1159,9 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let contentType;
 
             if (createNodePoolRequest !== null && createNodePoolRequest !== undefined) {
@@ -1139,8 +1211,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let contentType;
+            
             let id;
+            
             let clusterId;
 
             if (deleteAddonInstanceRequest !== null && deleteAddonInstanceRequest !== undefined) {
@@ -1191,11 +1266,17 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let name;
+            
             let namespace;
+            
             let contentType;
+            
             let deleteVolume;
+            
             let storageType;
+            
             let xClusterID;
 
             if (deleteCloudPersistentVolumeClaimsRequest !== null && deleteCloudPersistentVolumeClaimsRequest !== undefined) {
@@ -1260,14 +1341,23 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let clusterId;
+            
             let contentType;
+            
             let deleteEfs;
+            
             let deleteEni;
+            
             let deleteEvs;
+            
             let deleteNet;
+            
             let deleteObs;
+            
             let deleteSfs;
+            
             let tobedeleted;
 
             if (deleteClusterRequest !== null && deleteClusterRequest !== undefined) {
@@ -1347,9 +1437,13 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let clusterId;
+            
             let nodeId;
+            
             let contentType;
+            
             let nodepoolScaleDown;
 
             if (deleteNodeRequest !== null && deleteNodeRequest !== undefined) {
@@ -1404,8 +1498,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let nodepoolId;
+            
             let contentType;
 
             if (deleteNodePoolRequest !== null && deleteNodePoolRequest !== undefined) {
@@ -1453,7 +1550,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let contentType;
 
             if (hibernateClusterRequest !== null && hibernateClusterRequest !== undefined) {
@@ -1496,7 +1595,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let contentType;
+            
             let clusterId;
 
             if (listAddonInstancesRequest !== null && listAddonInstancesRequest !== undefined) {
@@ -1542,7 +1643,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let contentType;
+            
             let addonTemplateName;
 
             if (listAddonTemplatesRequest !== null && listAddonTemplatesRequest !== undefined) {
@@ -1585,10 +1688,15 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let contentType;
+            
             let detail;
+            
             let status;
+            
             let type;
+            
             let version;
 
             if (listClustersRequest !== null && listClustersRequest !== undefined) {
@@ -1648,8 +1756,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let clusterId;
+            
             let contentType;
+            
             let showDefaultNodePool;
 
             if (listNodePoolsRequest !== null && listNodePoolsRequest !== undefined) {
@@ -1699,7 +1810,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let contentType;
 
             if (listNodesRequest !== null && listNodesRequest !== undefined) {
@@ -1744,8 +1857,11 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let targetClusterId;
+            
             let contentType;
 
             if (migrateNodeRequest !== null && migrateNodeRequest !== undefined) {
@@ -1802,7 +1918,9 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let contentType;
 
             if (removeNodeRequest !== null && removeNodeRequest !== undefined) {
@@ -1852,8 +1970,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let contentType;
+            
             let id;
+            
             let clusterId;
 
             if (showAddonInstanceRequest !== null && showAddonInstanceRequest !== undefined) {
@@ -1903,8 +2024,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            
             let clusterId;
+            
             let contentType;
+            
             let detail;
 
             if (showClusterRequest !== null && showClusterRequest !== undefined) {
@@ -1957,7 +2081,9 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let jobId;
+            
             let contentType;
 
             if (showJobRequest !== null && showJobRequest !== undefined) {
@@ -2001,8 +2127,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let nodeId;
+            
             let contentType;
 
             if (showNodeRequest !== null && showNodeRequest !== undefined) {
@@ -2051,8 +2180,11 @@ export const ParamCreater = function () {
             };
             const localVarHeaderParameter = {} as any;
 
+            
             let clusterId;
+            
             let nodepoolId;
+            
             let contentType;
 
             if (showNodePoolRequest !== null && showNodePoolRequest !== undefined) {
@@ -2101,7 +2233,9 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let id;
+            
             let contentType;
 
             if (updateAddonInstanceRequest !== null && updateAddonInstanceRequest !== undefined) {
@@ -2153,7 +2287,9 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let contentType;
 
             if (updateClusterRequest !== null && updateClusterRequest !== undefined) {
@@ -2206,8 +2342,11 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let nodeId;
+            
             let contentType;
 
             if (updateNodeRequest !== null && updateNodeRequest !== undefined) {
@@ -2266,8 +2405,11 @@ export const ParamCreater = function () {
             const localVarHeaderParameter = {} as any;
 
             var body: any;
+            
             let clusterId;
+            
             let nodepoolId;
+            
             let contentType;
 
             if (updateNodePoolRequest !== null && updateNodePoolRequest !== undefined) {

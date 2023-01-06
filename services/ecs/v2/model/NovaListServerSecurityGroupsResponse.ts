@@ -1,6 +1,6 @@
 import { NovaSecurityGroup } from './NovaSecurityGroup';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class NovaListServerSecurityGroupsResponse extends SdkResponse {
     private 'security_groups'?: Array<NovaSecurityGroup> | undefined;

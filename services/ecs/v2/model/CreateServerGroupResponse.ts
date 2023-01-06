@@ -1,6 +1,6 @@
 import { CreateServerGroupResult } from './CreateServerGroupResult';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateServerGroupResponse extends SdkResponse {
     private 'server_group'?: CreateServerGroupResult | undefined;

@@ -1,6 +1,6 @@
 import { HealthMonitor } from './HealthMonitor';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CreateHealthMonitorResponse extends SdkResponse {
     private 'request_id'?: string | undefined;

@@ -1,6 +1,6 @@
 import { SecurityPolicy } from './SecurityPolicy';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class UpdateSecurityPolicyResponse extends SdkResponse {
     private 'security_policy'?: SecurityPolicy | undefined;

@@ -1,7 +1,7 @@
 import { MigrateNodesSpec } from './MigrateNodesSpec';
 import { TaskStatus } from './TaskStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class MigrateNodeResponse extends SdkResponse {
     public apiVersion?: string;

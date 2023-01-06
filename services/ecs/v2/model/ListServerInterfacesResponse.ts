@@ -1,7 +1,7 @@
 import { InterfaceAttachableQuantity } from './InterfaceAttachableQuantity';
 import { InterfaceAttachment } from './InterfaceAttachment';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListServerInterfacesResponse extends SdkResponse {
     public attachableQuantity?: InterfaceAttachableQuantity;

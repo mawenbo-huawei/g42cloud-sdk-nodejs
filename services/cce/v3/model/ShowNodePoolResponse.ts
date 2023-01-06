@@ -2,7 +2,7 @@ import { NodePoolMetadata } from './NodePoolMetadata';
 import { NodePoolSpec } from './NodePoolSpec';
 import { NodePoolStatus } from './NodePoolStatus';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowNodePoolResponse extends SdkResponse {
     public kind?: string;

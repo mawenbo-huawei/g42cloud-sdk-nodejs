@@ -1,6 +1,6 @@
 import { ListResourceResp } from './ListResourceResp';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ListVpcsByTagsResponse extends SdkResponse {
     public resources?: Array<ListResourceResp>;

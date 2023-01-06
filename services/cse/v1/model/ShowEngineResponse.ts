@@ -2,7 +2,7 @@ import { EngineExternalEntrypoint } from './EngineExternalEntrypoint';
 import { EngineReference } from './EngineReference';
 import { Spec } from './Spec';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class ShowEngineResponse extends SdkResponse {
     public id?: string;

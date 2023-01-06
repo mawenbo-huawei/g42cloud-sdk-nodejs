@@ -1,6 +1,6 @@
 import { QuotaList } from './QuotaList';
 
-import { SdkResponse } from "@huaweicloud/huaweicloud-sdk-core/SdkResponse";
+import { SdkResponse } from "@g42cloud/g42cloud-sdk-core/SdkResponse";
 
 export class CinderListQuotasResponse extends SdkResponse {
     private 'quota_set'?: QuotaList | undefined;
