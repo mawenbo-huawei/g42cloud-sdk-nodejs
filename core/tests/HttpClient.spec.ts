@@ -7,6 +7,7 @@ import { GlobalCredentials } from "../auth/GlobalCredentials";
 import { HcClient } from "../HcClient";
 import { DefaultHttpClient } from "../http/DefaultHttpClient";
 import { Region } from "../region/region";
+import { SdkResponse } from "../SdkResponse";
 
 const regions =
 {
@@ -119,7 +120,7 @@ describe('httpclient  tests', () => {
         after(() => {
             nock.cleanAll();
         });
-        it('should set domain id correctly', function (done) { 
+        it('should set domain id correctly', function (done) {
             const client = new DefaultHttpClient();
             const hcClient = new HcClient(client);
             let credential = new GlobalCredentials();
@@ -148,5 +149,20 @@ describe('httpclient  tests', () => {
             });;
 
         });
+    });
+
+    describe("should return sdkstreamresponse", function () {
+        const defaultClient = new DefaultHttpClient();
+        let hcClient = new HcClient(defaultClient);
+
+        const res = hcClient['extractResponse']({
+            data: new SdkResponse(),
+            statusCode: 200,
+            headers: { 'content-type': 'application/zip' }
+        });
+
+        expect(res).not.to.be.null;
+        expect(res.httpStatusCode).to.equal(200);
+        expect(res).to.have.property('body');
     });
 });

@@ -19,7 +19,7 @@
  * under the License.
  */
 
-import axios, { AxiosResponse, AxiosError } from 'axios';
+import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 import { IHttpRequest } from './IHttpRequest';
 import { stringify as qsStringify } from 'querystring';
 import { HttpClient } from './HttpClient';
@@ -66,8 +66,7 @@ export class DefaultHttpClient implements HttpClient {
         if (this.defaultOption.proxy && this.defaultOption.proxy !== '') {
             proxyAgent = HttpsProxyAgent(this.defaultOption.proxy);
         }
-
-        this.axiosInstance = axios.create({
+        const axiosRequestConfig: AxiosRequestConfig = {
             maxContentLength: Infinity,
             headers: Object.assign(
                 this.DEFAULT_HEADERS,
@@ -76,7 +75,13 @@ export class DefaultHttpClient implements HttpClient {
             proxy: false,
             httpAgent: proxyAgent,
             httpsAgent: proxyAgent
-        });
+        };
+
+        if (this.defaultOption.axiosRequestConfig) {
+            Object.assign(axiosRequestConfig, this.defaultOption.axiosRequestConfig);
+        }
+
+        this.axiosInstance = axios.create(axiosRequestConfig);
 
         this.axiosInstance.interceptors.request.use((request: any) => {
             const { url, method, data, headers } = request;
@@ -118,7 +123,7 @@ export class DefaultHttpClient implements HttpClient {
             const result = this._convertResponse<T>(httpRequest, res);
 
             return {
-                data: result instanceof String ? undefined : result,
+                data: result,
                 statusCode: res.status,
                 headers: res.headers
             };
@@ -143,7 +148,7 @@ export class DefaultHttpClient implements HttpClient {
         if (this.defaultOption.headers) {
             const customUserAgent = this.defaultOption.headers['User-Agent'];
             if (customUserAgent) {
-                headers['User-Agent'] = ["huaweicloud-usdk-nodejs/3.0",customUserAgent].join(" ");
+                headers['User-Agent'] = ["huaweicloud-usdk-nodejs/3.0", customUserAgent].join(" ");
             } else {
                 headers['User-Agent'] = "huaweicloud-usdk-nodejs/3.0"
             }
@@ -159,6 +164,11 @@ export class DefaultHttpClient implements HttpClient {
                 return qsStringify(params);
             },
         };
+        
+        if (httpRequest.axiosRequestConfig) {
+            Object.assign(requestParams, httpRequest.axiosRequestConfig);
+        }
+
         const methods: string[] = ['PUT', 'POST', 'PATCH', 'DELETE'];
         if (method && methods.indexOf(method.toUpperCase()) !== -1) {
             requestParams = Object.assign(requestParams, {
@@ -204,7 +214,7 @@ export class DefaultHttpClient implements HttpClient {
             data: error.response ? error.response.data : undefined,
             status: error.response ? error.response.status : undefined,
             headers: error.response ? error.response.headers : undefined,
-            message: error.message || undefined,  
+            message: error.message || undefined,
             requestId: error.response?.headers['x-request-id']
         }
         return transformedResponse;
@@ -223,4 +233,5 @@ export interface ClientOptions {
     headers?: any,
     logger?: Logger,
     logLevel?: LogLevel;
+    axiosRequestConfig?: AxiosRequestConfig
 }
