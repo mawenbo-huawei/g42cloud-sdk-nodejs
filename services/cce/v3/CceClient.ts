@@ -178,7 +178,7 @@ export class CceClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public awakeCluster(awakeClusterRequest?: AwakeClusterRequest): Promise<void> {
+    public awakeCluster(awakeClusterRequest?: AwakeClusterRequest): Promise<AwakeClusterResponse> {
         const options = ParamCreater().awakeCluster(awakeClusterRequest);
 
          // @ts-ignore
@@ -335,7 +335,7 @@ export class CceClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteAddonInstance(deleteAddonInstanceRequest?: DeleteAddonInstanceRequest): Promise<string> {
+    public deleteAddonInstance(deleteAddonInstanceRequest?: DeleteAddonInstanceRequest): Promise<DeleteAddonInstanceResponse> {
         const options = ParamCreater().deleteAddonInstance(deleteAddonInstanceRequest);
 
          // @ts-ignore
@@ -454,7 +454,7 @@ export class CceClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public hibernateCluster(hibernateClusterRequest?: HibernateClusterRequest): Promise<void> {
+    public hibernateCluster(hibernateClusterRequest?: HibernateClusterRequest): Promise<HibernateClusterResponse> {
         const options = ParamCreater().hibernateCluster(hibernateClusterRequest);
 
          // @ts-ignore

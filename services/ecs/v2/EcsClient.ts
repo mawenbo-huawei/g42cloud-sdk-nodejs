@@ -320,7 +320,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public addServerGroupMember(addServerGroupMemberRequest?: AddServerGroupMemberRequest): Promise<void> {
+    public addServerGroupMember(addServerGroupMemberRequest?: AddServerGroupMemberRequest): Promise<AddServerGroupMemberResponse> {
         const options = ParamCreater().addServerGroupMember(addServerGroupMemberRequest);
 
          // @ts-ignore
@@ -428,7 +428,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchCreateServerTags(batchCreateServerTagsRequest?: BatchCreateServerTagsRequest): Promise<void> {
+    public batchCreateServerTags(batchCreateServerTagsRequest?: BatchCreateServerTagsRequest): Promise<BatchCreateServerTagsResponse> {
         const options = ParamCreater().batchCreateServerTags(batchCreateServerTagsRequest);
 
          // @ts-ignore
@@ -470,7 +470,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchDeleteServerTags(batchDeleteServerTagsRequest?: BatchDeleteServerTagsRequest): Promise<void> {
+    public batchDeleteServerTags(batchDeleteServerTagsRequest?: BatchDeleteServerTagsRequest): Promise<BatchDeleteServerTagsResponse> {
         const options = ParamCreater().batchDeleteServerTags(batchDeleteServerTagsRequest);
 
          // @ts-ignore
@@ -725,7 +725,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteServerGroup(deleteServerGroupRequest?: DeleteServerGroupRequest): Promise<void> {
+    public deleteServerGroup(deleteServerGroupRequest?: DeleteServerGroupRequest): Promise<DeleteServerGroupResponse> {
         const options = ParamCreater().deleteServerGroup(deleteServerGroupRequest);
 
          // @ts-ignore
@@ -745,7 +745,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteServerGroupMember(deleteServerGroupMemberRequest?: DeleteServerGroupMemberRequest): Promise<void> {
+    public deleteServerGroupMember(deleteServerGroupMemberRequest?: DeleteServerGroupMemberRequest): Promise<DeleteServerGroupMemberResponse> {
         const options = ParamCreater().deleteServerGroupMember(deleteServerGroupMemberRequest);
 
          // @ts-ignore
@@ -765,7 +765,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteServerMetadata(deleteServerMetadataRequest?: DeleteServerMetadataRequest): Promise<void> {
+    public deleteServerMetadata(deleteServerMetadataRequest?: DeleteServerMetadataRequest): Promise<DeleteServerMetadataResponse> {
         const options = ParamCreater().deleteServerMetadata(deleteServerMetadataRequest);
 
          // @ts-ignore
@@ -784,7 +784,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteServerPassword(deleteServerPasswordRequest?: DeleteServerPasswordRequest): Promise<void> {
+    public deleteServerPassword(deleteServerPasswordRequest?: DeleteServerPasswordRequest): Promise<DeleteServerPasswordResponse> {
         const options = ParamCreater().deleteServerPassword(deleteServerPasswordRequest);
 
          // @ts-ignore
@@ -882,13 +882,13 @@ export class EcsClient {
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @summary 查询云服务器规格变更支持列表
-     * @param {string} [instanceUuid] 进行规格切换的云服务器ID，UUID格式。
+     * @param {string} [instanceUuid] 进行规格切换的云服务器ID，UUID格式。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
      * @param {number} [limit] 单页面可显示的flavor条数最大值，默认是1000。
      * @param {string} [marker] 以单页最后一条flavor的ID作为分页标记。
      * @param {'asc' | 'desc'} [sortDir] 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
      * @param {'flavorid' | 'sort_key' | 'name' | 'memory_mb' | 'vcpus' | 'root_gb'} [sortKey] 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
-     * @param {string} [sourceFlavorId] 进行规格切换的云服务器源规格ID。
-     * @param {string} [sourceFlavorName] 进行规格切换的云服务器源规格名称。
+     * @param {string} [sourceFlavorId] 进行规格切换的云服务器源规格ID。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
+     * @param {string} [sourceFlavorName] 进行规格切换的云服务器源规格名称。(instance_uuid,source_flavor_id and source_flavor_name 不能都为空)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -995,7 +995,7 @@ export class EcsClient {
      * @param {number} [limit] 查询返回云服务器当前页面的大小。每页最多返回1000台云服务器的信息。
      * @param {string} [name] 云服务器名称，匹配规则为模糊匹配。
      * @param {string} [notTags] 查询tag字段中不包含该值的云服务器。
-     * @param {number} [offset] 页码。 当前页面数，默认为1。  取值大于等于0，取值为0时返回第1页。
+     * @param {number} [offset] 页码。 当前页面数，默认为1，取值范围大于等于0。 当取值为0时，系统默认返回第1页，与取值为1时相同。 建议设置该参数大于等于1。
      * @param {string} [reservationId] 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
      * @param {string} [status] 云服务器状态。  取值范围：  ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  只有管理员可以使用“deleted”状态过滤查询已经删除的弹性云服务器。  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
      * @param {string} [tags] 查询tag字段中包含该值的云服务器。
@@ -1047,7 +1047,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public novaAssociateSecurityGroup(novaAssociateSecurityGroupRequest?: NovaAssociateSecurityGroupRequest): Promise<void> {
+    public novaAssociateSecurityGroup(novaAssociateSecurityGroupRequest?: NovaAssociateSecurityGroupRequest): Promise<NovaAssociateSecurityGroupResponse> {
         const options = ParamCreater().novaAssociateSecurityGroup(novaAssociateSecurityGroupRequest);
 
          // @ts-ignore
@@ -1112,7 +1112,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public novaDeleteKeypair(novaDeleteKeypairRequest?: NovaDeleteKeypairRequest): Promise<void> {
+    public novaDeleteKeypair(novaDeleteKeypairRequest?: NovaDeleteKeypairRequest): Promise<NovaDeleteKeypairResponse> {
         const options = ParamCreater().novaDeleteKeypair(novaDeleteKeypairRequest);
 
          // @ts-ignore
@@ -1131,7 +1131,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public novaDeleteServer(novaDeleteServerRequest?: NovaDeleteServerRequest): Promise<void> {
+    public novaDeleteServer(novaDeleteServerRequest?: NovaDeleteServerRequest): Promise<NovaDeleteServerResponse> {
         const options = ParamCreater().novaDeleteServer(novaDeleteServerRequest);
 
          // @ts-ignore
@@ -1151,7 +1151,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public novaDisassociateSecurityGroup(novaDisassociateSecurityGroupRequest?: NovaDisassociateSecurityGroupRequest): Promise<void> {
+    public novaDisassociateSecurityGroup(novaDisassociateSecurityGroupRequest?: NovaDisassociateSecurityGroupRequest): Promise<NovaDisassociateSecurityGroupResponse> {
         const options = ParamCreater().novaDisassociateSecurityGroup(novaDisassociateSecurityGroupRequest);
 
          // @ts-ignore
@@ -1300,7 +1300,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public registerServerAutoRecovery(registerServerAutoRecoveryRequest?: RegisterServerAutoRecoveryRequest): Promise<void> {
+    public registerServerAutoRecovery(registerServerAutoRecoveryRequest?: RegisterServerAutoRecoveryRequest): Promise<RegisterServerAutoRecoveryResponse> {
         const options = ParamCreater().registerServerAutoRecovery(registerServerAutoRecoveryRequest);
 
          // @ts-ignore
@@ -1322,7 +1322,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public registerServerMonitor(registerServerMonitorRequest?: RegisterServerMonitorRequest): Promise<void> {
+    public registerServerMonitor(registerServerMonitorRequest?: RegisterServerMonitorRequest): Promise<RegisterServerMonitorResponse> {
         const options = ParamCreater().registerServerMonitor(registerServerMonitorRequest);
 
          // @ts-ignore
@@ -1386,7 +1386,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public resetServerPassword(resetServerPasswordRequest?: ResetServerPasswordRequest): Promise<void> {
+    public resetServerPassword(resetServerPasswordRequest?: ResetServerPasswordRequest): Promise<ResetServerPasswordResponse> {
         const options = ParamCreater().resetServerPassword(resetServerPasswordRequest);
 
          // @ts-ignore
@@ -1658,7 +1658,7 @@ export class EcsClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public updateServerAutoTerminateTime(updateServerAutoTerminateTimeRequest?: UpdateServerAutoTerminateTimeRequest): Promise<void> {
+    public updateServerAutoTerminateTime(updateServerAutoTerminateTimeRequest?: UpdateServerAutoTerminateTimeRequest): Promise<UpdateServerAutoTerminateTimeResponse> {
         const options = ParamCreater().updateServerAutoTerminateTime(updateServerAutoTerminateTimeRequest);
 
          // @ts-ignore

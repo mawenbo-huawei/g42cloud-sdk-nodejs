@@ -337,7 +337,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchCreateSubnetTags(batchCreateSubnetTagsRequest?: BatchCreateSubnetTagsRequest): Promise<void> {
+    public batchCreateSubnetTags(batchCreateSubnetTagsRequest?: BatchCreateSubnetTagsRequest): Promise<BatchCreateSubnetTagsResponse> {
         const options = ParamCreater().batchCreateSubnetTags(batchCreateSubnetTagsRequest);
 
          // @ts-ignore
@@ -358,7 +358,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchDeleteSubnetTags(batchDeleteSubnetTagsRequest?: BatchDeleteSubnetTagsRequest): Promise<void> {
+    public batchDeleteSubnetTags(batchDeleteSubnetTagsRequest?: BatchDeleteSubnetTagsRequest): Promise<BatchDeleteSubnetTagsResponse> {
         const options = ParamCreater().batchDeleteSubnetTags(batchDeleteSubnetTagsRequest);
 
          // @ts-ignore
@@ -474,7 +474,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public createSubnetTag(createSubnetTagRequest?: CreateSubnetTagRequest): Promise<void> {
+    public createSubnetTag(createSubnetTagRequest?: CreateSubnetTagRequest): Promise<CreateSubnetTagResponse> {
         const options = ParamCreater().createSubnetTag(createSubnetTagRequest);
 
          // @ts-ignore
@@ -512,7 +512,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deletePort(deletePortRequest?: DeletePortRequest): Promise<void> {
+    public deletePort(deletePortRequest?: DeletePortRequest): Promise<DeletePortResponse> {
         const options = ParamCreater().deletePort(deletePortRequest);
 
          // @ts-ignore
@@ -531,7 +531,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteRouteTable(deleteRouteTableRequest?: DeleteRouteTableRequest): Promise<void> {
+    public deleteRouteTable(deleteRouteTableRequest?: DeleteRouteTableRequest): Promise<DeleteRouteTableResponse> {
         const options = ParamCreater().deleteRouteTable(deleteRouteTableRequest);
 
          // @ts-ignore
@@ -550,7 +550,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteSecurityGroup(deleteSecurityGroupRequest?: DeleteSecurityGroupRequest): Promise<void> {
+    public deleteSecurityGroup(deleteSecurityGroupRequest?: DeleteSecurityGroupRequest): Promise<DeleteSecurityGroupResponse> {
         const options = ParamCreater().deleteSecurityGroup(deleteSecurityGroupRequest);
 
          // @ts-ignore
@@ -569,7 +569,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteSecurityGroupRule(deleteSecurityGroupRuleRequest?: DeleteSecurityGroupRuleRequest): Promise<void> {
+    public deleteSecurityGroupRule(deleteSecurityGroupRuleRequest?: DeleteSecurityGroupRuleRequest): Promise<DeleteSecurityGroupRuleResponse> {
         const options = ParamCreater().deleteSecurityGroupRule(deleteSecurityGroupRuleRequest);
 
          // @ts-ignore
@@ -589,7 +589,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteSubnet(deleteSubnetRequest?: DeleteSubnetRequest): Promise<void> {
+    public deleteSubnet(deleteSubnetRequest?: DeleteSubnetRequest): Promise<DeleteSubnetResponse> {
         const options = ParamCreater().deleteSubnet(deleteSubnetRequest);
 
          // @ts-ignore
@@ -610,7 +610,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteSubnetTag(deleteSubnetTagRequest?: DeleteSubnetTagRequest): Promise<void> {
+    public deleteSubnetTag(deleteSubnetTagRequest?: DeleteSubnetTagRequest): Promise<DeleteSubnetTagResponse> {
         const options = ParamCreater().deleteSubnetTag(deleteSubnetTagRequest);
 
          // @ts-ignore
@@ -630,7 +630,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteVpcPeering(deleteVpcPeeringRequest?: DeleteVpcPeeringRequest): Promise<void> {
+    public deleteVpcPeering(deleteVpcPeeringRequest?: DeleteVpcPeeringRequest): Promise<DeleteVpcPeeringResponse> {
         const options = ParamCreater().deleteVpcPeering(deleteVpcPeeringRequest);
 
          // @ts-ignore
@@ -1119,7 +1119,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deletePrivateip(deletePrivateipRequest?: DeletePrivateipRequest): Promise<void> {
+    public deletePrivateip(deletePrivateipRequest?: DeletePrivateipRequest): Promise<DeletePrivateipResponse> {
         const options = ParamCreater().deletePrivateip(deletePrivateipRequest);
 
          // @ts-ignore
@@ -1242,7 +1242,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public neutronDeleteSecurityGroup(neutronDeleteSecurityGroupRequest?: NeutronDeleteSecurityGroupRequest): Promise<void> {
+    public neutronDeleteSecurityGroup(neutronDeleteSecurityGroupRequest?: NeutronDeleteSecurityGroupRequest): Promise<NeutronDeleteSecurityGroupResponse> {
         const options = ParamCreater().neutronDeleteSecurityGroup(neutronDeleteSecurityGroupRequest);
 
          // @ts-ignore
@@ -1261,7 +1261,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public neutronDeleteSecurityGroupRule(neutronDeleteSecurityGroupRuleRequest?: NeutronDeleteSecurityGroupRuleRequest): Promise<void> {
+    public neutronDeleteSecurityGroupRule(neutronDeleteSecurityGroupRuleRequest?: NeutronDeleteSecurityGroupRuleRequest): Promise<NeutronDeleteSecurityGroupRuleResponse> {
         const options = ParamCreater().neutronDeleteSecurityGroupRule(neutronDeleteSecurityGroupRuleRequest);
 
          // @ts-ignore
@@ -1470,7 +1470,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public neutronDeleteFirewallGroup(neutronDeleteFirewallGroupRequest?: NeutronDeleteFirewallGroupRequest): Promise<void> {
+    public neutronDeleteFirewallGroup(neutronDeleteFirewallGroupRequest?: NeutronDeleteFirewallGroupRequest): Promise<NeutronDeleteFirewallGroupResponse> {
         const options = ParamCreater().neutronDeleteFirewallGroup(neutronDeleteFirewallGroupRequest);
 
          // @ts-ignore
@@ -1489,7 +1489,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public neutronDeleteFirewallPolicy(neutronDeleteFirewallPolicyRequest?: NeutronDeleteFirewallPolicyRequest): Promise<void> {
+    public neutronDeleteFirewallPolicy(neutronDeleteFirewallPolicyRequest?: NeutronDeleteFirewallPolicyRequest): Promise<NeutronDeleteFirewallPolicyResponse> {
         const options = ParamCreater().neutronDeleteFirewallPolicy(neutronDeleteFirewallPolicyRequest);
 
          // @ts-ignore
@@ -1508,7 +1508,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public neutronDeleteFirewallRule(neutronDeleteFirewallRuleRequest?: NeutronDeleteFirewallRuleRequest): Promise<void> {
+    public neutronDeleteFirewallRule(neutronDeleteFirewallRuleRequest?: NeutronDeleteFirewallRuleRequest): Promise<NeutronDeleteFirewallRuleResponse> {
         const options = ParamCreater().neutronDeleteFirewallRule(neutronDeleteFirewallRuleRequest);
 
          // @ts-ignore
@@ -1740,7 +1740,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchCreateVpcTags(batchCreateVpcTagsRequest?: BatchCreateVpcTagsRequest): Promise<void> {
+    public batchCreateVpcTags(batchCreateVpcTagsRequest?: BatchCreateVpcTagsRequest): Promise<BatchCreateVpcTagsResponse> {
         const options = ParamCreater().batchCreateVpcTags(batchCreateVpcTagsRequest);
 
          // @ts-ignore
@@ -1761,7 +1761,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public batchDeleteVpcTags(batchDeleteVpcTagsRequest?: BatchDeleteVpcTagsRequest): Promise<void> {
+    public batchDeleteVpcTags(batchDeleteVpcTagsRequest?: BatchDeleteVpcTagsRequest): Promise<BatchDeleteVpcTagsResponse> {
         const options = ParamCreater().batchDeleteVpcTags(batchDeleteVpcTagsRequest);
 
          // @ts-ignore
@@ -1801,7 +1801,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public createVpcResourceTag(createVpcResourceTagRequest?: CreateVpcResourceTagRequest): Promise<void> {
+    public createVpcResourceTag(createVpcResourceTagRequest?: CreateVpcResourceTagRequest): Promise<CreateVpcResourceTagResponse> {
         const options = ParamCreater().createVpcResourceTag(createVpcResourceTagRequest);
 
          // @ts-ignore
@@ -1839,7 +1839,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteVpc(deleteVpcRequest?: DeleteVpcRequest): Promise<void> {
+    public deleteVpc(deleteVpcRequest?: DeleteVpcRequest): Promise<DeleteVpcResponse> {
         const options = ParamCreater().deleteVpc(deleteVpcRequest);
 
          // @ts-ignore
@@ -1858,7 +1858,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteVpcRoute(deleteVpcRouteRequest?: DeleteVpcRouteRequest): Promise<void> {
+    public deleteVpcRoute(deleteVpcRouteRequest?: DeleteVpcRouteRequest): Promise<DeleteVpcRouteResponse> {
         const options = ParamCreater().deleteVpcRoute(deleteVpcRouteRequest);
 
          // @ts-ignore
@@ -1879,7 +1879,7 @@ export class VpcClient {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public deleteVpcTag(deleteVpcTagRequest?: DeleteVpcTagRequest): Promise<void> {
+    public deleteVpcTag(deleteVpcTagRequest?: DeleteVpcTagRequest): Promise<DeleteVpcTagResponse> {
         const options = ParamCreater().deleteVpcTag(deleteVpcTagRequest);
 
          // @ts-ignore

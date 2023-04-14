@@ -20,8 +20,8 @@
  */
 
 import * as crypto from "crypto";
-import moment = require('moment');
-import url = require('url')
+import moment from 'moment';
+import url from "url";
 import { IHttpRequest } from "../http/IHttpRequest";
 import * as _ from "lodash";
 import { ICredential } from "./ICredential";
@@ -37,12 +37,12 @@ export class AKSKSigner {
     private static hex: string[] = [];
     private static hexTable(): string[] {
         if (this.hex.length <= 0) {
-            for (var i = 0; i < 256; ++i) {
+            for (let i = 0; i < 256; ++i) {
                 this.hex[i] = '%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase();
             }
         }
         return this.hex;
-    };
+    }
     private static noEscape: number[] = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0 - 15
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 16 - 31
@@ -55,7 +55,7 @@ export class AKSKSigner {
     ];
 
     public static sign(request: IHttpRequest, credential: ICredential) {
-        let authenticationHeaders = {};
+        const authenticationHeaders = {};
         let dateTimeStamp = request.headers[this.HeaderXDate];
         if (dateTimeStamp) {
             dateTimeStamp = moment(dateTimeStamp).utcOffset(0).format(this.BasicDateFormat);
@@ -70,14 +70,14 @@ export class AKSKSigner {
         const parsedUrl = url.parse(request.endpoint, true);
 
         let host = parsedUrl.host;
-        let reqUrlHostAndPort = request.headers[this.HeaderHost];
+        const reqUrlHostAndPort = request.headers[this.HeaderHost];
         if (reqUrlHostAndPort) {
             host = reqUrlHostAndPort;
         }
         Object.assign(authenticationHeaders, { "host": host });
 
-        let allHeaders = {};
-        let current_headers:any = {};
+        const allHeaders = {};
+        const current_headers: any = {};
         Object.assign(current_headers, request.headers);
         if (current_headers['content-type']?.indexOf('multipart/form-data') !== -1) {
             delete current_headers['content-type'];
@@ -86,7 +86,7 @@ export class AKSKSigner {
         const canonicalURI = this.CanonicalURI(parsedUrl.pathname!);
         const canonicalQueryString = this.CanonicalQueryString(request);
 
-        let sortedKeys = _.sortBy(Object.keys(allHeaders), (x: string) => {
+        const sortedKeys = _.sortBy(Object.keys(allHeaders), (x: string) => {
             return x.toLocaleLowerCase();
         });
         const signedHeaderNames = sortedKeys.join(";").toLocaleLowerCase();
@@ -94,7 +94,7 @@ export class AKSKSigner {
         const payloadHash = this.buildPayloadHash(request);
 
         const canonicalRequest = this.buildCanonicalRequest(request.method, canonicalURI, canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
-
+ 
         const canonicalRequestHash = this.Hex(canonicalRequest);
         const stringToSign = this.getStringToSign(this.SDK_SIGNING_ALGORITHM, dateTimeStamp, canonicalRequestHash);
         const signatureString = this.hmacSHA256(credential.getSk(), stringToSign);
@@ -111,13 +111,13 @@ export class AKSKSigner {
         if (!inputUri) {
             return inputUri;
         }
-        var uriList = inputUri.split('/');
-        var uri = [];
-        for (var item in uriList) {
-            var uriValue = uriList[item];
-            uri.push(encodeURIComponent(uriValue))
+        const uriList = inputUri.split('/');
+        const uri = [];
+        for (let i = 0; i < uriList.length; i++) {
+            const uriValue = uriList[i];
+            uri.push(this.urlEncode(uriValue));
         }
-        var urlpath = uri.join('/');
+        let urlpath = uri.join('/');
         if (urlpath[urlpath.length - 1] !== '/') {
             urlpath = urlpath + '/'
         }
@@ -164,31 +164,27 @@ export class AKSKSigner {
     }
 
     private static buildCanonicalHeaders(allHeaders: any) {
-        let sortedKeys = _.sortBy(Object.keys(allHeaders), (x: string) => {
-            return x.toLocaleLowerCase();
-        });
+        const headers = Object.keys(allHeaders).map(key => ({ key, value: allHeaders[key] }));
+        headers.sort((a, b) => a.key.toLocaleLowerCase().localeCompare(b.key.toLocaleLowerCase()));
         let canonicalHeaders = "";
-        for (const key of sortedKeys) {
-            const lowerKey = key.toLocaleLowerCase();
-            canonicalHeaders += `${lowerKey}:${allHeaders[key]}\n`;
+        for (let i = 0; i < headers.length; i++) {
+            const lowerKey = headers[i].key.toLocaleLowerCase();
+            canonicalHeaders += `${lowerKey}:${headers[i].value}\n`;
         }
         return canonicalHeaders;
     }
 
     private static CanonicalQueryString(r: any) {
-        const keys = [];
-        for (let key in r.queryParams) {
-            keys.push(key)
-        }
+        const keys = Object.keys(r.queryParams);
         keys.sort();
         const a = [];
-        for (let i in keys) {
+        for (let i = 0; i < keys.length; i++) {
             const key = this.urlEncode(keys[i]);
             const value = r.queryParams[keys[i]];
             if (Array.isArray(value)) {
                 value.sort();
-                for (let iv in value) {
-                    a.push(key + '=' + this.urlEncode(value[iv]))
+                for (let j = 0; j < value.length; j++) {
+                    a.push(key + '=' + this.urlEncode(value[j]))
                 }
             } else {
                 a.push(key + '=' + this.urlEncode(value))
@@ -207,8 +203,8 @@ export class AKSKSigner {
         let out = '';
         let lastPos = 0;
 
-        for (var i = 0; i < str.length; ++i) {
-            var c = str.charCodeAt(i);
+        for (let i = 0; i < str.length; ++i) {
+            let c = str.charCodeAt(i);
 
             // ASCII
             if (c < 0x80) {
@@ -243,7 +239,7 @@ export class AKSKSigner {
             if (i >= str.length)
                 throw new RequiredError('ERR_INVALID_URI');
 
-            var c2 = str.charCodeAt(i) & 0x3FF;
+            const c2 = str.charCodeAt(i) & 0x3FF;
 
             lastPos = i + 1;
             c = 0x10000 + (((c & 0x3FF) << 10) | c2);

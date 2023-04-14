@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 G42 Technologies Co.,Ltd.
+ * Copyright 2023 G42 Technologies Co.,Ltd.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -27,11 +27,10 @@ export class Region {
     public links: LinksSelf;
     public id: string;
     public type: string;
-    public constructor(description?: any, parentRegionId?: any, links?: any, locales?: any, id?: any, type?: any) {
+    public constructor(description?: any, parentRegionId?: any, links?: any, id?: any, type?: any) {
         this['description'] = description;
         this['parent_region_id'] = parentRegionId;
-        this['links'] = links;
-        this['locales'] = locales;
+        this['links'] = links; 
         this['id'] = id;
         this['type'] = type;
     }
