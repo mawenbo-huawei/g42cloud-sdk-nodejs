@@ -13,7 +13,7 @@ jobs:
           node-version: '16.15.1'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: npm install typescript@4.1.6
+        run: npm install -g typescript@4.1.6
       - name: Compile projects
         run: |
           for service in `ls "${GITHUB_WORKSPACE}/services`
