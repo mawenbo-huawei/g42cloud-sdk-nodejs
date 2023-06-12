@@ -12,14 +12,27 @@ jobs:
         with:
           node-version: '16.15.1'
           registry-url: 'https://registry.npmjs.org'
-      - run: |
-          cd "${GITHUB_WORKSPACE}/core" || exit 1
-          npm publish --access public --dry-run true
-          for each in $(find "${GITHUB_WORKSPACE}/services" -maxdepth 1 -mindepth 1 -type d)
+      - name: Install dependencies
+        run: npm install typescript@4.1.6
+      - name: Compile projects
+        run: |
+          for service in `ls "${GITHUB_WORKSPACE}/services`
+          cd "${GITHUB_WORKSPACE}/services/${service}" || exit 1
           do
-            cd "${each}" || exit 1
-            npm publish --access public --dry-run true
+            first=true
+            for version in `ls`
+            do
+              if test -d "${version}"
+              then
+                if ${first}; then
+                  echo "export * from './${version}/public-api';" >> "g42cloud-sdk-${service}.ts"
+                  first=false
+                fi
+               echo "export * as ${version} from './${version}/public-api';" >> "g42cloud-sdk-${service}.ts"
+              fi
+            done
           done
+          cd "${GITHUB_WORKSPACE}" || exit 1
+          tsc
+          find . -name "*.d.ts"
         shell: bash
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
