@@ -18,7 +18,7 @@ jobs:
         run: |
           for service in `ls "${GITHUB_WORKSPACE}/services`
           do
-          cd "${GITHUB_WORKSPACE}/services/${service}" || exit 1
+            cd "${GITHUB_WORKSPACE}/services/${service}" || exit 1
             first=true
             for version in `ls`
             do
